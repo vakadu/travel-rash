@@ -18,3 +18,11 @@
     }
 }
 /*for screens that are greater than 1200px apply this mixin*/
+
+@define-mixin clearfix{
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
