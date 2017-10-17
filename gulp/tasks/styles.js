@@ -1,20 +1,20 @@
-var gulp         = require('gulp'),
-    postcss      = require('gulp-postcss'),
+var gulp = require('gulp'),
+    postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    cssvars      = require('postcss-simple-vars'),
-    nestedcss    = require('postcss-nested'),
-    importcss    = require('postcss-import'),
-    mixins       = require('postcss-mixins');
+    cssvars = require('postcss-simple-vars'),
+    nested = require('postcss-nested'),
+    cssimport = require('postcss-import'),
+    mixins = require('postcss-mixins'),
+    hexrgba = require('postcss-hexrgba');
+
+//task function first parameter is name of task nad second is anonymous func. name of function can be anything
 
 gulp.task('styles', function () {
     return gulp.src('./app/assets/styles/styles.css')
-        .pipe(postcss([importcss, mixins, cssvars, nestedcss, autoprefixer]))
+        .pipe(postcss([cssimport, mixins, cssvars, nested, hexrgba, autoprefixer]))
         .on('error', function (errorInfo) {
             console.log(errorInfo.toString());
             this.emit('end');
         })
         .pipe(gulp.dest('./app/temp/styles'));
 });
-
-//task has two parameters first one is name of task second is what does this task do
-//name default task as default
