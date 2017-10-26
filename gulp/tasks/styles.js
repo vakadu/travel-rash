@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     mixins = require('postcss-mixins'),
     hexrgba = require('postcss-hexrgba');
 
-//task function first parameter is name of task nad second is anonymous func. name of function can be anything
+//task function first parameter is name of task and second is anonymous func. name of function can be anything
 
 gulp.task('styles', function () {
     return gulp.src('./app/assets/styles/styles.css')
