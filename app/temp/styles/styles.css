@@ -1124,8 +1124,13 @@ a{
 @media (min-width: 800px) {
 
 .site-header{
+        position: fixed;
         background-color: rgba(47,85,114, .3)
 }
+
+        .site-header--dark{
+            background-color: rgba(23, 51, 72, .85);
+        }
     }
 
 @media (min-width: 800px) {
@@ -1144,6 +1149,10 @@ a{
         -webkit-transform-origin: 50% 0;
                 transform-origin: 50% 0;
         background-color: #2f5572;
+        -webkit-transition: -webkit-transform .3s ease-out;
+        transition: -webkit-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transition: transform .3s ease-out, -webkit-transform .3s ease-out;
         padding: 25px 36px;
     }
 
@@ -1152,8 +1161,14 @@ a{
 .site-header__logo{
             left: auto;
             -webkit-transform: translateX(0);
-                    transform: translateX(0)
+                    transform: translateX(0)/*this selector will target logo when dark color is used*/
+            /*.site-header--dark & this gives us .site-header--dark .site-header--logo*/
     }
+
+            .site-header--dark .site-header__logo {
+                -webkit-transform: scale(.545);
+                        transform: scale(.545);
+            }
     }
 
 .site-header__logo__graphic{
@@ -1276,11 +1291,14 @@ a{
 .primary-nav{
 
     padding-top: 10px;
-
-    @maixin atMedium{
-        padding-top: 0;
-    }
 }
+
+@media (min-width: 800px) {
+
+.primary-nav{
+        padding-top: 0
+}
+    }
 
 @media (min-width: 800px) {
 
@@ -1343,14 +1361,22 @@ a{
             font-size: 1rem;
             background-color: transparent
     }
+
+            .primary-nav a.is-current-link{
+                color: #fabb69;
+            }
     }
 
 .reveal-item{
     opacity: 0;
-    -webkit-transition: opacity 1.5s ease-out;
-    transition: opacity 1.5s ease-out;
+    -webkit-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
 }
 
 .reveal-item--is-visible{
         opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
