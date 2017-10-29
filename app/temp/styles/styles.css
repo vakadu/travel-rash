@@ -837,14 +837,14 @@ a{
 
 @media (min-width: 800px) {
 
-.row__equal-height_at__medium{
+.flexbox .row__equal-height_at__medium{
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex
      }
     }
 
-.row__equal-height_at__medium > div{
+.flexbox .row__equal-height_at__medium > div{
             float: none;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -853,14 +853,14 @@ a{
 
 @media (min-width: 1010px) {
 
-.row__equal-height_at__large{
+.flexbox .row__equal-height_at__large{
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex
     }
     }
 
-.row__equal-height_at__large > div{
+.flexbox .row__equal-height_at__large > div{
             float: none;
             display: -webkit-box;
             display: -ms-flexbox;
